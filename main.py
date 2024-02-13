@@ -1879,13 +1879,13 @@ def page_4():
                                     validate="key", validatecommand=(app.register(validate_username_start2), '%P'))
         username_start_validate_lbl2=ctk.CTkLabel(master=main_frame, text='',justify="left", font=("",20),wraplength=600,fg_color="transparent")
         
-        password_start_lbl2=ctk.CTkLabel(master=main_frame, text=english_strings['password_start_lbl_str'],justify="left", font=("",20),wraplength=600)
+        password_start_lbl2=ctk.CTkLabel(master=main_frame, text=english_strings['password_start_lbl_str'],justify="left", font=("",18),wraplength=600)
         password_start_entry2=ctk.CTkEntry(master=main_frame,width=299,height=25, corner_radius=0,
                                      border_color="#006633",border_width=1,font=("",24),
                                     validate="key", validatecommand=(app.register(validate_password_start2), '%P'))
         password_start_validate_lbl2=ctk.CTkLabel(master=main_frame, text='',justify="left", font=("",20),wraplength=600,fg_color="transparent")
         
-        password_secret_start_lbl2=ctk.CTkLabel(master=main_frame, text=english_strings['password_secret_start_lbl_str'],justify="left", font=("",20),
+        password_secret_start_lbl2=ctk.CTkLabel(master=main_frame, text=english_strings['password_secret_start_lbl_str'],justify="left", font=("",18),
                                                 wraplength=600)
         password_secret_start_entry2=ctk.CTkEntry(master=main_frame,width=299,height=25, corner_radius=0,
                                      border_color="#006633",border_width=1,font=("",24),
