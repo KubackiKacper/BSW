@@ -1030,7 +1030,7 @@ inputval = None
 
 def validate_file_name(new_value):
     global inputval
-    pattern = re.compile(r'^[a-zA-Z0-9_]*$')
+    pattern = re.compile(r'^[a-zA-Z0-9_,-;[{}&^%$#@!]*$')
     
     if pattern.match(new_value):
         if len(new_value) == 0:
@@ -3034,6 +3034,7 @@ def page_6():
     global password_val, ssid_val, ipaddr_val, original_text4, hidden_text4, label_text4, original_text5, hidden_text5 
     global label_text5,send_to_non_root_btn,ipaddr2_val,ipaddr2_nonroot_val
     if language_value=='polish':
+        
         page6_back_BTN=ctk.CTkButton(master=main_frame,command=lambda:[page_5(),delete_file2(),indicate(page5_btn),
                                                     ],
                                  fg_color="grey",text=polish_strings['back_button'],width=80)
@@ -3268,6 +3269,8 @@ def page_6():
 
 def send_config_to_root():
     global root_device_info,root_config_commands,send_to_non_root_btn
+
+
     if language_value=="polish":
         send_to_non_root_btn.place(relx=0.75,rely=0.85,anchor=tk.CENTER)
     else:
@@ -3309,7 +3312,7 @@ def send_config_to_root():
     
 
     close_btn=ctk.CTkButton(master=send_window, command=lambda:[send_window.destroy(),send_window.update()],
-                            text='OK', fg_color="#006633",width=40,height=20)
+                           text='OK', fg_color="#006633",width=40,height=20)
     
     help_lbl.pack(anchor="w",padx=5,pady=10)
     close_btn.pack()
