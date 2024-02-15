@@ -227,7 +227,7 @@ Klasa A: 0.0.0.0-127.255.255.255, lub
 Klasa B: 128.0.0.0 - 191.255.255.255, lub
 Klasa C: 192.0.0.0 - 223.255.255.255""",
 
-    'send1_lbl_str':"Przesył pliku do urządzenia zakończył się sukcesem, przepnij kabel konsolowy do drugiego urządzenia i kliknij w przycisk odpowiadający za przysył pliku do drugiego urządzenia",
+    'send1_lbl_str':"Przesył pliku do urządzenia zakończył się sukcesem, przepnij kabel konsolowy do drugiego urządzenia i kliknij w przycisk odpowiadający za przesył pliku do drugiego urządzenia",
     'send2_lbl_str':"Przesył pliku do urządzenia zakończył się sukcesem. Możesz odłączyć kabel od urządzenia i przejść do następnego kroku.",
     'send1_error_lbl_str':"Przesyłanie pliku do urządzenia nie powiodło się, sprawdź czy podany adres IP oraz dane uwierzytelniające są poprawne ",
     'final_step_lbl_str':"""Pliki konfiguracyjne zostały pomyślnie utworzone. Ostatnim krokiem w konfiguracji jest przesłanie ich do urządzeń. Nawiąż połączenie z urządzeniem za pomocą portu konsolowego oraz klienta obsługującego protokoły sieciowe np. PuTTy. Poniżej znajdują się dwa przyciski: Jeden służący do wysłania pliku do urządzenia głównego, drugi do urządzenia podrzędnego. Po kliknięciu w przycisk odczekaj chwile, aplikacja podejmie próbe wysyłki pliku do urządzenia. Drugi przycisk zostanie ukazany po kliknięciu pierwszego. Zweryfikuj czy podane informacje są poprawne, jeżeli zauważyłeś w nich jakiś błąd, wróć do poprzednich kroków i zmień wartości dla konfiguracji.
