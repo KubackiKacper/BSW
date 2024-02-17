@@ -2180,7 +2180,7 @@ def page_2():
     global root2_ip_entry, ipaddr2_validate_lbl,netmask2_val
      
     if language_value == 'polish':
-        if selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
+        if selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
             page2_next_btn=ctk.CTkButton(master=main_frame,command=lambda:[set_netmask_page2(),page2_check_values()],
                                     fg_color="#006633",text=polish_strings['next_button'],width=80)
             page2_back_BTN=ctk.CTkButton(master=main_frame,command=lambda:[page_4(),delete_file1() ,indicate(page4_btn),
@@ -2210,7 +2210,7 @@ def page_2():
             ipaddr_validate_lbl=ctk.CTkLabel(master=main_frame, text='',justify="left", font=("",20),wraplength=600)
         
         
-        elif selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
+        elif selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
             page2_next_btn=ctk.CTkButton(master=main_frame,command=lambda:[set_netmask_page2(),page2_check_values()],
                                     fg_color="#006633",text=polish_strings['next_button'],width=80)
             page2_back_BTN=ctk.CTkButton(master=main_frame,command=lambda:[page_4(),delete_file1() ,indicate(page4_btn),
@@ -2254,7 +2254,7 @@ def page_2():
 
     else:
         
-        if selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
+        if selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
             page2_next_btn=ctk.CTkButton(master=main_frame,command=lambda:[set_netmask_page2(),page2_check_values()],
                                     fg_color="#006633",text=english_strings['next_button'],width=80)
             page2_back_BTN=ctk.CTkButton(master=main_frame,command=lambda:[page_4(),delete_file1() ,indicate(page4_btn),
@@ -2284,7 +2284,7 @@ def page_2():
             ipaddr_validate_lbl=ctk.CTkLabel(master=main_frame, text='',justify="left", font=("",20),wraplength=600)
         
         
-        elif selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
+        elif selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
             page2_next_btn=ctk.CTkButton(master=main_frame,command=lambda:[set_netmask_page2(),page2_check_values()],
                                     fg_color="#006633",text=english_strings['next_button'],width=80)
             page2_back_BTN=ctk.CTkButton(master=main_frame,command=lambda:[page_4(),delete_file1() ,indicate(page4_btn),
@@ -2349,14 +2349,14 @@ def page_2():
     def set_netmask_page2():
         global netmask1_val,netmask2_val
         netmask1_val=str(netmask1_combobox.get())
-        if selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
+        if selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
             netmask2_val=str(netmask2_combobox.get())
 
     ssid_val = str(ssid_entry.get())
     ipaddr_val = str(root_ip_entry.get())
     password_val = str(password_entry.get())
     
-    if selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
+    if selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
         ipaddr_val2 = str(root2_ip_entry.get())
         netmask2_combobox.place(relx=0.855,rely=0.86,anchor=tk.CENTER)
     
@@ -2409,14 +2409,14 @@ def page2_invalid_values():
 def page2_check_values():
     global ssid_val, ipaddr_val, password_val, root_config_commands, file1, netmask1_val,ipaddr2_val
     delete_file1()
-    if selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
+    if selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
         if ssid_val == '' or ipaddr_val == '' or password_val == '' or validate_ip_address(ipaddr_val)==False or validate_password_root(password_val)==False or validate_ssid_name_root(ssid_val)==False:
             page2_invalid_values()
             return
         else:
             indicate(page5_btn)
             root_config_commands=None
-            if selected_checkbox == 'Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
+            if selected_checkbox== 'Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
                 root_config_commands = [
                     'configure terminal',
                     'hostname root',
@@ -2457,7 +2457,7 @@ def page2_check_values():
                     'no shutdown',
                     'exit'
                 ]    
-    elif selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
+    elif selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
         if (ssid_val == '' or ipaddr_val == '' or password_val == '' or ipaddr2_val=='' or validate_ip_address(ipaddr_val)==False or 
             validate_ip_address(ipaddr2_val)==False or validate_password_root(password_val)==False or 
             validate_ssid_name_root(ssid_val)==False or ipaddr2_val==ipaddr_val):
@@ -2466,7 +2466,7 @@ def page2_check_values():
         else:
             indicate(page5_btn)
             root_config_commands=None
-            if selected_checkbox == 'Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
+            if selected_checkbox== 'Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
                 root_config_commands = [
                     'configure terminal',
                     'hostname root',
@@ -2507,7 +2507,7 @@ def page2_check_values():
                     'no shutdown',
                     'exit'
                 ]
-    if selected_checkbox == 'Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
+    if selected_checkbox== 'Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
         with open(file_path1, 'w') as file1:
             root_config_commands.insert(5,'dot11 ssid ' + ssid_val)
             root_config_commands.insert(9,'wpa-psk ascii ' + password_val)
@@ -2657,7 +2657,7 @@ def page_5():
     netmask3_val=None
     
     if language_value=='polish':
-        if selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
+        if selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
             page5_back_BTN=ctk.CTkButton(master=main_frame,command=lambda:[page_2(),delete_file1(),indicate(page2_btn),
                         toggle_visibility_password_wifi()],
                                     fg_color="grey",text=polish_strings['back_button'],width=80)
@@ -2713,7 +2713,7 @@ def page_5():
             ipaddr2_nonroot_validate_lbl.place(relx=0.5,rely=0.82,anchor=tk.CENTER)
         
     else:
-        if selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
+        if selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
             page5_back_BTN=ctk.CTkButton(master=main_frame,command=lambda:[page_2(),delete_file1(),indicate(page2_btn),
                         toggle_visibility_password_wifi()],
                                     fg_color="grey",text=english_strings['back_button'],width=80)
@@ -2785,12 +2785,12 @@ def page_5():
     def set_netmask_page5():
             global netmask_val, netmask3_val
             netmask_val=str(netmask_combobox.get())
-            if selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox =='Wireless Access Point':
+            if selected_checkbox=='Most Wi-Fi' or selected_checkbox =='Wi-Fi Bridge':
                 netmask3_val=str(netmask3_combobox.get())
     
     ipaddr_nonroot_val=str(ipaddr_nonroot_entry.get())
     ipaddr_dg_nonroot_val=str(ipaddr_dg_nonroot_entry.get())
-    if selected_checkbox=='Bezprzewodowy punkt dostępowy'or selected_checkbox=='Wireless Access Point':
+    if selected_checkbox=='Most Wi-Fi'or selected_checkbox=='Wi-Fi Bridge':
         ipaddr2_nonroot_val=str(ipaddr2_nonroot_entry.get())
         netmask3_combobox.place(relx=0.855,rely=0.75,anchor=tk.CENTER)
 
@@ -2836,14 +2836,14 @@ def page5_checkvalues():
     global password_val,netmask_val,ipaddr2_nonroot_val, ipaddr_val,ipaddr2_val
     
     delete_file2()
-    if selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
+    if selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
         if ipaddr_nonroot_val==ipaddr_val or ipaddr_nonroot_val == '' or ipaddr_dg_nonroot_val == '' or ipaddr_nonroot_val==None or ipaddr_dg_nonroot_val==None or validate_ip_address(ipaddr_dg_nonroot_val)==False or validate_ip_address(ipaddr_nonroot_val)==False :
             page5_invalid_values()
             return
         else:
             indicate(page6_btn)
             non_root_config_commands=None
-            if selected_checkbox == 'Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
+            if selected_checkbox== 'Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
                 non_root_config_commands = [
                 'configure terminal',
                 'hostname repeater',
@@ -2889,7 +2889,7 @@ def page5_checkvalues():
                     'exit'
                   
                 ]
-    elif selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
+    elif selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
         if (ipaddr_nonroot_val==ipaddr_val or ipaddr_nonroot_val == ''or ipaddr2_nonroot_val=='' or ipaddr_dg_nonroot_val == '' 
             or ipaddr_nonroot_val==None or ipaddr2_nonroot_val==None or ipaddr_dg_nonroot_val==None or 
             validate_ip_address(ipaddr_dg_nonroot_val)==False or validate_ip_address(ipaddr_nonroot_val)==False or 
@@ -2900,7 +2900,7 @@ def page5_checkvalues():
         else:
             indicate(page6_btn)
             non_root_config_commands=None
-            if selected_checkbox == 'Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
+            if selected_checkbox== 'Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
                 non_root_config_commands = [
                 'configure terminal',
                 'hostname repeater',
@@ -2946,7 +2946,7 @@ def page5_checkvalues():
                     'exit'
                 ]
             
-    if selected_checkbox == 'Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
+    if selected_checkbox== 'Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
         with open(file_path2, 'w') as file2:
             non_root_config_commands.insert(4,'ssid ' + ssid_val)
             non_root_config_commands.insert(8,'dot11 ssid ' + ssid_val)
@@ -3047,7 +3047,7 @@ def page_6():
         root_device_config_lbl1=ctk.CTkLabel(master=main_frame,text=polish_strings['ip2_last_page']+': '+ ipaddr_val,font=('',14))
         root_device_config_lbl2=ctk.CTkLabel(master=main_frame,text=polish_strings['ssid_last_page']+': '+ ssid_val,font=('',14))
         
-        if selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
+        if selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
             root_device_config_lbl1_2=ctk.CTkLabel(master=main_frame,text=polish_strings['ip3_last_page']+': '+ ipaddr2_val,font=('',14))
             root_device_config_lbl1_2.place(relx=0.95,rely=0.47,anchor=tk.E)
         
@@ -3084,7 +3084,7 @@ def page_6():
         
         non_root_device_config_lbl1=ctk.CTkLabel(master=main_frame,text=polish_strings['ip2_last_page']+': '+ ipaddr_nonroot_val,font=('',14))
         non_root_device_config_lbl2=ctk.CTkLabel(master=main_frame,text=polish_strings['ip_dg_last_page']+': '+ ipaddr_dg_nonroot_val,font=('',14))
-        if selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
+        if selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
             non_root_device_config_lbl1_2=ctk.CTkLabel(master=main_frame,text=polish_strings['ip3_last_page']+': '+ ipaddr2_nonroot_val,font=('',14))
             non_root_device_config_lbl1_2.place(relx=0.95,rely=0.72,anchor=tk.E)
         
@@ -3127,7 +3127,7 @@ def page_6():
         root_device_config_lbl1=ctk.CTkLabel(master=main_frame,text=english_strings['ip2_last_page']+': '+ ipaddr_val,font=('',14))
         root_device_config_lbl2=ctk.CTkLabel(master=main_frame,text=english_strings['ssid_last_page']+': '+ ssid_val,font=('',14))
         
-        if selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
+        if selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
             root_device_config_lbl1_2=ctk.CTkLabel(master=main_frame,text=english_strings['ip3_last_page']+': '+ ipaddr2_val,font=('',14))
             root_device_config_lbl1_2.place(relx=0.95,rely=0.52,anchor=tk.E)
         
@@ -3165,7 +3165,7 @@ def page_6():
         non_root_device_config_lbl1=ctk.CTkLabel(master=main_frame,text=english_strings['ip2_last_page']+': '+ ipaddr_nonroot_val,font=('',14))
         non_root_device_config_lbl2=ctk.CTkLabel(master=main_frame,text=english_strings['ip_dg_last_page']+': '+ ipaddr_dg_nonroot_val,font=('',14))
         
-        if selected_checkbox=='Bezprzewodowy punkt dostępowy' or selected_checkbox=='Wireless Access Point':
+        if selected_checkbox=='Most Wi-Fi' or selected_checkbox=='Wi-Fi Bridge':
             non_root_device_config_lbl1_2=ctk.CTkLabel(master=main_frame,text=english_strings['ip3_last_page']+': '+ ipaddr2_nonroot_val,font=('',14))
             non_root_device_config_lbl1_2.place(relx=0.95,rely=0.72,anchor=tk.E)
         
