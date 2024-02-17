@@ -467,24 +467,23 @@ def reset_values():
 #?__________________________________________________________________________________________________________________________________
 
 def calculate_lfs_values():
-    global distance, frequency, lfs_tg, lfs_rg
+    global distance, frequency
+
     
     lfs_Result_entry.configure(state="normal")
     distance_str=distance_entry.get()
     frequency_str=frequency_entry.get()
-    lfs_th_str=lfs_tg_entry.get()
-    lfs_rg_str=lfs_rg_entry.get()
+
     
     try:
         distance=float(distance_str)
         frequency=float(frequency_str)
-        lfs_tg=float(lfs_th_str)
-        lfs_rg=float(lfs_rg_str)
+
     except ValueError:
         Result_entry.delete(0, tk.END)
         not_all_values_entered()
         return
-    result = np.round((20 * np.log10(distance)) + (20 * np.log10(frequency * 1e9)) + (20 * np.log10((4*constants.pi)/constants.speed_of_light)) - lfs_tg - lfs_rg,3)
+    result = np.round((20 * np.log10(distance)) + (20 * np.log10(frequency * 1e6)) + (20 * np.log10((4*constants.pi)/constants.speed_of_light)),3)
     lfs_Result_entry.delete(0, tk.END)
     Lfs_entry.delete(0, tk.END)
     
@@ -500,8 +499,7 @@ def reset_lfs_values():
     
     distance_entry.configure(validate="none")
     frequency_entry.configure(validate="none")
-    lfs_tg_entry.configure(validate="none")
-    lfs_rg_entry.configure(validate="none")
+
     Lfs_entry.configure(validate="none")
 
 
@@ -509,8 +507,7 @@ def reset_lfs_values():
     Lfs_entry.delete(0, tk.END)
     distance_entry.delete(0, tk.END)
     frequency_entry.delete(0, tk.END)
-    lfs_tg_entry.delete(0, tk.END)
-    lfs_rg_entry.delete (0, tk.END)
+
     
     Result_entry.configure(state="disabled")
 
@@ -518,8 +515,7 @@ def reset_lfs_values():
     Lfs_entry.configure(validate="key", validatecommand=(app.register(validate_entry_widgets), '%P'))
     distance_entry.configure(validate="key", validatecommand=(app.register(validate_entry_widgets), '%P'))
     frequency_entry.configure(validate="key", validatecommand=(app.register(validate_entry_widgets), '%P'))
-    lfs_tg_entry.configure(validate="key", validatecommand=(app.register(validate_entry_widgets), '%P'))
-    lfs_rg_entry.configure (validate="key", validatecommand=(app.register(validate_entry_widgets), '%P'))
+
     Lfs_entry.configure(validate="key", validatecommand=(app.register(validate_entry_widgets), '%P'))
     
 #?__________________________________________________________________________________________________________________________________   
@@ -528,7 +524,7 @@ def calculate_lfs_result():
     global distance, frequency, lfs_tg, lfs_rg, distance_entry, frequency_entry,lfs_tg_entry,lfs_rg_entry,lfs_Result_entry
     lfs_calculate_window = ctk.CTkToplevel(master=main_frame)
     lfs_calculate_window.title("")
-    lfs_calculate_window.geometry("350x350+780+400")
+    lfs_calculate_window.geometry("350x250+780+400")
     lfs_calculate_window.after(300, lambda: lfs_calculate_window.iconbitmap("help.ico"))
     lfs_calculate_window.resizable(False, False)
     
@@ -541,14 +537,7 @@ def calculate_lfs_result():
         frequency_entry=ctk.CTkEntry(master=lfs_calculate_window,width=300,height=25, corner_radius=0,
                                      border_color="#006633",border_width=1,font=("",16),
                                      validate="key",validatecommand=(app.register(validate_entry_widgets), '%P'))
-        lfs_tg_lbl=ctk.CTkLabel(master=lfs_calculate_window, text=polish_strings['lfs_tg_str'],justify="left",font=("",18))
-        lfs_tg_entry=ctk.CTkEntry(master=lfs_calculate_window,width=300,height=25, corner_radius=0,
-                                     border_color="#006633",border_width=1,font=("",16),
-                                     validate="key",validatecommand=(app.register(validate_entry_widgets), '%P'))
-        lfs_rg_lbl=ctk.CTkLabel(master=lfs_calculate_window, text=polish_strings['lfs_rg_str'],justify="left",font=("",18))
-        lfs_rg_entry=ctk.CTkEntry(master=lfs_calculate_window,width=300,height=25, corner_radius=0,
-                                     border_color="#006633",border_width=1,font=("",16),
-                                     validate="key",validatecommand=(app.register(validate_entry_widgets), '%P'))
+
         Result_lbl=ctk.CTkLabel(master=lfs_calculate_window, text=polish_strings['result_lbl'],justify="left",font=("",18))
         lfs_Result_entry=ctk.CTkEntry(master=lfs_calculate_window,width=300,height=25, corner_radius=0,
                                      border_color="#006633",border_width=1,font=("",16),
@@ -571,14 +560,7 @@ def calculate_lfs_result():
         frequency_entry=ctk.CTkEntry(master=lfs_calculate_window,width=300,height=25, corner_radius=0,
                                      border_color="#006633",border_width=1,font=("",16),
                                      validate="key",validatecommand=(app.register(validate_entry_widgets), '%P'))
-        lfs_tg_lbl=ctk.CTkLabel(master=lfs_calculate_window, text=english_strings['lfs_tg_str'],justify="left",font=("",18))
-        lfs_tg_entry=ctk.CTkEntry(master=lfs_calculate_window,width=300,height=25, corner_radius=0,
-                                     border_color="#006633",border_width=1,font=("",16),
-                                     validate="key",validatecommand=(app.register(validate_entry_widgets), '%P'))
-        lfs_rg_lbl=ctk.CTkLabel(master=lfs_calculate_window, text=english_strings['lfs_rg_str'],justify="left",font=("",18))
-        lfs_rg_entry=ctk.CTkEntry(master=lfs_calculate_window,width=300,height=25, corner_radius=0,
-                                     border_color="#006633",border_width=1,font=("",16),
-                                     validate="key",validatecommand=(app.register(validate_entry_widgets), '%P'))
+
         Result_lbl=ctk.CTkLabel(master=lfs_calculate_window, text=english_strings['result_lbl'],justify="left",font=("",18))
         lfs_Result_entry=ctk.CTkEntry(master=lfs_calculate_window,width=300,height=25, corner_radius=0,
                                      border_color="#006633",border_width=1,font=("",16),
@@ -599,18 +581,13 @@ def calculate_lfs_result():
     frequency_lbl.pack(anchor="center")
     frequency_entry.pack(anchor="center",pady=1)
     
-    lfs_tg_lbl.pack(anchor="center")
-    lfs_tg_entry.pack(anchor="center",pady=1)
-    
-    lfs_rg_lbl.pack(anchor="center")
-    lfs_rg_entry.pack(anchor="center",pady=1)
     
     Result_lbl.pack(anchor="center")
     lfs_Result_entry.pack(anchor="center",pady=1)
     
     calculate_button.place(relx=0.385,rely=0.85,anchor=tk.CENTER)
     reset_button.place(relx=0.625,rely=0.85,anchor=tk.CENTER)
-    close_btn.place(relx=0.5,rely=0.93,anchor=tk.CENTER)
+    close_btn.place(relx=0.5,rely=0.95,anchor=tk.CENTER)
     lfs_calculate_window.grab_set()
 
 #?__________________________________________________________________________________________________________________________________

@@ -33,18 +33,18 @@ Before starting, make sure that both devices are connected to power and the home
 
     #!-----------------------------------------------------------
     'link_budget_label_str': "Link Budget Calculator (optional)",
-    'Ptx_entry_str': "Pᵗˣ - Transmitter output power in dBm",
-    'Gtx_entry_str': "Gᵗˣ - Transmitter antenna gain in dB",
-    'Ltx_entry_str': "Lᵗˣ - Transmitter losses in dBi",
-    'Lfs_entry_str': "Lᶠˢ - Free space losses in dB",
-    'Lm_entry_str': "Lᵐ - Miscellaneous losses in dB",
-    'Grx_entry_str': "Gʳˣ - Receiver antenna gain in dB",
-    'Lrx_entry_str': "Lʳˣ - Receiver losses in dB",
+    'Ptx_entry_str': "Pᵗˣ - Transmitter output power    [dBm]",
+    'Gtx_entry_str': "Gᵗˣ - Transmitter antenna gain    [dBi]",
+    'Ltx_entry_str': "Lᵗˣ - Transmitter losses    [dB]",
+    'Lfs_entry_str': "Lᶠˢ - Free space losses    [dB]",
+    'Lm_entry_str': "Lᵐ - Miscellaneous losses    [dB]",
+    'Grx_entry_str': "Gʳˣ - Receiver antenna gain    [dBi]",
+    'Lrx_entry_str': "Lʳˣ - Receiver losses    [dB]",
     'wrong_value_entered_str': """The character entered is not allowed, please try again.
 The decimal separator for numbers is '.'""",
     'not_all_values_entered_str': "Not all values have been provided, please try again",
     'distance_str': "Distance in meters",
-    'frequency_str': "Frequency in GHz",
+    'frequency_str': "Frequency in MHz",
     'lfs_tg_str': "Gtx - Transmitter antenna gain in dB",
     'lfs_rg_str': "Grx - Receiver antenna gain in dBi",
     'link_budget_help_str': """What is a link budget calculator?
@@ -56,17 +56,19 @@ The general equation for the link budget calculator is: Received Power (dBm) = T
 It is more specifically described in the diagram below:
 """,
     'link_budget_help_str2': """
-From the equation: Pʳˣ = Pᵗˣ + Gᵗˣ - Lᵗˣ - Lᶠˢ - Lᵐ + Gʳˣ - Lʳˣ
-where,
-T - transmitter,
-R - receiver,
-Pᵗˣ - Transmitter output power in dBm
-Gᵗˣ - Transmitter antenna gain in dB
-Lᵗˣ - Transmitter losses in dBi
-Lᶠˢ - Free space losses in dB
-Lᵐ - Miscellaneous losses in dB
-Gʳˣ - Receiver antenna gain in dB
-Lʳˣ - Receiver losses in dB
+where:
+T - Transmitter,
+R - Receiver,
+
+From the above diagram, the derived equation is : Pʳˣ = Pᵗˣ + Gᵗˣ - Lᵗˣ - Lᶠˢ - Lᵐ + Gʳˣ - Lʳˣ
+where:
+Pᵗˣ - Transmitter output power [dBm],
+Gᵗˣ - Transmitter antenna gain [dBi],
+Lᵗˣ - Transmitter losses - signal power losses in the transmitter itself and its components, such as cables and connectors used for connecting the transmitting antenna [dBi],
+Lᶠˢ - Free space losses, that are dependend on frequency and distance [dB],
+Lᵐ - Miscellaneous losses, including signal attenuation through obstacles, impact of atmospheric conditions [dB],
+Gʳˣ - Receiver antenna gain [dBi],
+Lʳˣ - Receiver losses - signal power losses in the receiver and its components, such as cables and connectors used for connecting the receiving antenna [dB],
 """,
     #! PAGE 1------------------------------------------------------
     'file_name_lbl_str': "Enter the name for the configuration file",

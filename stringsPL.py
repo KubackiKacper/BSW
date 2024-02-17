@@ -33,18 +33,18 @@ Zostaniesz poproszony o udzielenie informacji na temat konkretnych ustawień, w 
 Przed rozpoczęciem upewnij się, że obydwa urządzenia są podpięte do zasilania oraz rutera domowego""",
 #!-----------------------------------------------------------
     'link_budget_label_str':"Kalkulator budżetu łącza (opcjonalne)",
-    'Ptx_entry_str':"Pᵗˣ - Wyjściowa moc nadajnika w dBm",
-    'Gtx_entry_str':"Gᵗˣ - Zysk anteny nadajnika w dB",
-    'Ltx_entry_str':"Lᵗˣ - Straty nadajnika w dBi",
-    'Lfs_entry_str':"Lᶠˢ - Straty w wolnej przestrzeni w dB",
-    'Lm_entry_str':"Lᵐ - Różne straty w dB",
-    'Grx_entry_str':"Gʳˣ - Zysk anteny odbiornika w dB",
-    'Lrx_entry_str':"Lʳˣ - Straty z odbiornika w dB",
+    'Ptx_entry_str':"Pᵗˣ - Wyjściowa moc nadajnika  [dBm]",
+    'Gtx_entry_str':"Gᵗˣ - Zysk anteny nadajnika  [dBi]",
+    'Ltx_entry_str':"Lᵗˣ - Straty nadajnika  [dB]",
+    'Lfs_entry_str':"Lᶠˢ - Straty w wolnej przestrzeni  [dB]",
+    'Lm_entry_str':"Lᵐ - Różne straty  [dB]",
+    'Grx_entry_str':"Gʳˣ - Zysk anteny odbiornika  [dBi]",
+    'Lrx_entry_str':"Lʳˣ - Straty odbiornika   [dB]",
     'wrong_value_entered_str':"""Wprowadzony znak jest niedozwolony, spróbuj ponownie
 Separatorem dziesiętym dla liczb jest ' . ' """,
     'not_all_values_entered_str':"Nie wszystkie wartości zostały podane, spróbuj ponownie",
     'distance_str':"Dystans w M",
-    'frequency_str':"Częstotliwość w GHz",
+    'frequency_str':"Częstotliwość w MHz",
     'lfs_tg_str':"Gᵗˣ - Zysk anteny nadajnika w dB",
     'lfs_rg_str':"Gʳˣ - Zysk anteny odbiornika w dBi",
     'link_budget_help_str':"""Czym jest kalkulator budżetu łącza?
@@ -56,17 +56,19 @@ Ogólne równanie dla kalkulatora budżetu łącza to: Moc Odbierna(dBm) = Moc N
 Bardziej szczegółowo opisuje to schemat poniżej:
 """,
     'link_budget_help_str2':"""
-Z czego wynika równanie: Pʳˣ = Pᵗˣ + Gᵗˣ - Lᵗˣ - Lᶠˢ - Lᵐ + Gʳˣ - Lʳˣ
-gdzie,
-T - transmiter,
-R - odbiornik,
-Pᵗˣ - Wyjściowa moc nadajnika w dBm
-Gᵗˣ - Zysk anteny nadajnika w dB
-Lᵗˣ - Straty nadajnika w dBi
-Lᶠˢ - Straty w wolnej przestrzeni w dB
-Lᵐ  - Różne straty w dB
-Gʳˣ - Zysk anteny odbiornika w dB
-Lʳˣ - Straty z odbiornika w dB
+gdzie:
+T - Nadajnik,
+R - Odbiornik,
+
+Z powyższego schematu wynika równanie: Pʳˣ = Pᵗˣ + Gᵗˣ - Lᵗˣ - Lᶠˢ - Lᵐ + Gʳˣ - Lʳˣ
+gdzie:
+Pᵗˣ - Wyjściowa moc nadajnika [dBm],
+Gᵗˣ - Zysk anteny nadajnika [dBi],
+Lᵗˣ - Straty nadajnika - straty mocy sygnału w samym nadajniku oraz w jego komponentach, takich jak kable i złącza wykorzystane przy podłączeniu anteny nadawczej [dB],
+Lᶠˢ - Straty w wolnej przestrzeni, zależne od częstotliwości oraz odległości [dB],
+Lᵐ  - Różne straty, uwzględniające tłumienie sygnału przez przeszkody, wpływ warunków atmosferycznych [dB],
+Gʳˣ - Zysk anteny odbiornika [dBi],
+Lʳˣ - Straty odbiornika [dB] - straty mocy sygnału w odbiorniku i jego komponentach, takich jak kable i złącza wykorzystane przy podłączeniu anteny odbiorczej [dB],
 """,
 #! PAGE 1------------------------------------------------------
     'file_name_lbl_str':"""Podaj nazwę, jaką ma przyjąć plik konfiguracyjny""",
