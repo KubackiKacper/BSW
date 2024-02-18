@@ -270,7 +270,7 @@ If your configuration needs to provide a connection farther than 1 kilometer awa
 - Panel antennas:
     - Cisco Aironet AIR-ANT2547VG-N, antenna gain for 2.4 GHz frequency = 7 dBi, cost approximately 300 PLN / unit,
 
-These are just a few suggestions regarding external antennas for the device. The most important factor indicating whether a specific antenna can be used in the configuration is the EIRP indicator. The EIRP value is calculated based on the power transmitted by the antenna (in dBm) and the antenna gain (in dBi). This is particularly important in the case of regulations and standards concerning radio signal power, as EIRP takes into account both the power transmitted by the transmitter and the antenna gain, allowing for a better determination of the actual range and potential impact of the signal on the environment. In Poland, for the 2.4 GHz band, the maximum EIRP value is 20 dBm. If this value is exceeded, it is possible to adjust the transmit power and receiver sensitivity, but this is not recommended as it may affect the quality of the connection. Below is a calculator to help calculate EIRP. The default power for the proposed devices is 22 dBm; the cable attenuation may depend on the length, type, and construction of the cable.
+These are just a few suggestions regarding external antennas for the device. The most important factor indicating whether a specific antenna can be used in the configuration is the EIRP indicator. The EIRP value is calculated based on the power transmitted by the antenna (in dBm) and the antenna gain (in dBi). This is particularly important in the case of regulations and standards concerning radio signal power, as EIRP takes into account both the power transmitted by the transmitter and the antenna gain, allowing for a better determination of the actual range and potential impact of the signal on the environment. In Poland, for the 2.4 GHz band, the maximum EIRP value is 20 dBm. If this value is exceeded, it is possible to use antenna with lower gain or adjust the transmit power and signal reception sensitivity of the receiver, but this is not recommended as it may affect the quality of the connection. Below is a calculator to help calculate EIRP. The default power for the proposed devices is 22 dBm; the cable attenuation may depend on the length, type, and construction of the cable.
 General equation for calculating the EIRP value:
 Transmitter power + Antenna gain - Cable attenuation * Cable length
 """,
@@ -280,7 +280,8 @@ Transmitter power + Antenna gain - Cable attenuation * Cable length
     'eirp_antenna': "Antenna Gain [dBi]",
 
     'root2_ip_lbl_str': "Enter the destination IP address of the Gigabitethernet port after configuration completion.",
-    'nonroot2_ip_lbl_str': "Enter the destination IP address of the Gigabitethernet port after configuration completion."
+    'nonroot2_ip_lbl_str': "Enter the destination IP address of the Gigabitethernet port after configuration completion.",
+    'eirp_result_lbl':"Result (EIRP)"
 }
 
 

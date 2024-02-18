@@ -268,7 +268,7 @@ Jeżeli twoja konfiguracja ma zapewnić połączenie w miejscu oddalonym dalej n
 -Anteny panelowe:
     -Cisco Aironet AIR-ANT2547VG-N, zysk anteny dla częstotliwości 2.4 gHz = 7 dBi, koszt około 300zł / szt,
 
-To tylko kilka propozycji dotyczących zewnętrznych anten dla urządzenia. Najważniejszym czynnikiem który świadczy o tym, czy można wykorzystać daną antene w konfiguracji jest wskaźnik EIRP. Wartość EIRP jest obliczana na podstawie mocy transmitowanej przez antenę (w dBm) oraz zysku anteny (w dBi). Jest to szczególnie istotne w przypadku regulacji i norm dotyczących mocy sygnału radiowego, ponieważ EIRP uwzględnia zarówno moc transmitowaną przez nadajnik, jak i zysk anteny, co pozwala na lepsze określenie rzeczywistego zasięgu i potencjalnego wpływu sygnału na otoczenie. W Polsce dla pasma 2.4 gHz, maksymalna wartośc EIRP może wynosić 20dBm. W przypadku przekroczenia tej wartości, można dostosować moc nadawania oraz czułość odbiornika, jednakże jest to działanie, które może wpłynąć na jakość połączenia, dlatego jest ono niezalecane.  Poniżej znajduje się kalkulator, pomagający w obliczeniu EIRP. Domyślną mocą dla proponowanych urządzeń jest 22dBm, tłumiennośc kabla może zależeć od: długości, typu oraz budowli kabla.
+To tylko kilka propozycji dotyczących zewnętrznych anten dla urządzenia. Najważniejszym czynnikiem który świadczy o tym, czy można wykorzystać daną antene w konfiguracji jest wskaźnik EIRP. Wartość EIRP jest obliczana na podstawie mocy transmitowanej przez antenę (w dBm) oraz zysku anteny (w dBi). Jest to szczególnie istotne w przypadku regulacji i norm dotyczących mocy sygnału radiowego, ponieważ EIRP uwzględnia zarówno moc transmitowaną przez nadajnik, jak i zysk anteny, co pozwala na lepsze określenie rzeczywistego zasięgu i potencjalnego wpływu sygnału na otoczenie. W Polsce dla pasma 2.4 gHz, maksymalna wartośc EIRP może wynosić 20dBm. W przypadku przekroczenia tej wartości, można użyć anteny o mniejszym zysku lub dostosować moc nadawania oraz czułość odbierania sygnału przez odbiornik, jednakże jest to działanie, które może wpłynąć na jakość połączenia, dlatego jest ono niezalecane.  Poniżej znajduje się kalkulator, pomagający w obliczeniu EIRP. Domyślną mocą dla proponowanych urządzeń jest 22dBm, tłumiennośc kabla może zależeć od: długości, typu oraz budowli kabla.
 Ogólne równanie dla obliczania wartości EIRP: 
 Moc nadajnika + Zysk anteny - Tłumienność kabla * Długość kabla
 """,
@@ -278,6 +278,7 @@ Moc nadajnika + Zysk anteny - Tłumienność kabla * Długość kabla
     'eirp_antenna':"Zysk Anteny [dBi]",
 
     'root2_ip_lbl_str':"Podaj docelowy adres IP portu Gigabitethernet, po ukończeniu konfiguracji",
-    'nonroot2_ip_lbl_str':"Podaj docelowy adres IP portu Gigabitethernet, po ukończeniu konfiguracji"
+    'nonroot2_ip_lbl_str':"Podaj docelowy adres IP portu Gigabitethernet, po ukończeniu konfiguracji",
+    'eirp_result_lbl':"Wynik (EIRP)"
 }
 

@@ -705,7 +705,7 @@ def lbc_devices():
         eirp_antenna_entry=ctk.CTkEntry(master=scroll_frame,width=300,height=25, corner_radius=0,
                                      border_color="#006633",border_width=1,font=("",16),
                                      validate="key",validatecommand=(app.register(validate_entry_widgets), '%P'))
-        Result_lbl=ctk.CTkLabel(master=scroll_frame, text=polish_strings['result_lbl'],justify="left",font=("",18))
+        Result_lbl=ctk.CTkLabel(master=scroll_frame, text=polish_strings['eirp_result_lbl'],justify="left",font=("",18))
         eirp_Result_entry=ctk.CTkEntry(master=scroll_frame,width=300,height=25, corner_radius=0,
                                      border_color="#006633",border_width=1,font=("",16),
                                      validate="key",validatecommand=(app.register(validate_entry_widgets), '%P'), justify="center")
@@ -735,7 +735,7 @@ def lbc_devices():
         eirp_antenna_entry=ctk.CTkEntry(master=scroll_frame,width=300,height=25, corner_radius=0,
                                      border_color="#006633",border_width=1,font=("",16),
                                      validate="key",validatecommand=(app.register(validate_entry_widgets), '%P'))
-        Result_lbl=ctk.CTkLabel(master=scroll_frame, text=english_strings['result_lbl'],justify="left",font=("",18))
+        Result_lbl=ctk.CTkLabel(master=scroll_frame, text=english_strings['eirp_result_lbl'],justify="left",font=("",18))
         eirp_Result_entry=ctk.CTkEntry(master=scroll_frame,width=300,height=25, corner_radius=0,
                                      border_color="#006633",border_width=1,font=("",16),
                                      validate="key",validatecommand=(app.register(validate_entry_widgets), '%P'), justify="center")
